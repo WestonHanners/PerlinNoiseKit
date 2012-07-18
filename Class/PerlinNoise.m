@@ -63,12 +63,12 @@
     }
 }
 
-- (float)perlin1DValueForPoint:(point1D)point {
+- (float)perlin1DValueForPoint:(float)x {
     float value = 0;
     for (int i = 0;i < _octaves;i++) {
         float frequency = pow(2,i);
         float amplitude = pow(_persistence,i);
-        value = value + [self interpolatedNoise1D:(point.x * _frequency) * frequency] * amplitude;
+        value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
     }
     return value * _scale;
 }
@@ -116,20 +116,15 @@
     }
 }
 
-- (float)perlin2DValueForPoint:(point2D)point {
+- (float)perlin2DValueForPoint:(float)x :(float)y{
     float value = 0;
     for (int i = 0;i < _octaves;i++) {
         float frequency = pow(2,i);
         float amplitude = pow(_persistence,i);
-        value = value + [self interpolatedNoise2D:(point.x * _frequency) * frequency :(point.y * _frequency) * frequency] * amplitude;
+        value = value + [self interpolatedNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
 
     }
     return value;
 }
-
-- (float)perlin3DValueForPoint:(point2D)point {
-    return 0.0f;
-}
-
 
 @end

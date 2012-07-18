@@ -8,21 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct {
-    float x;
-} point1D;
-
-typedef struct {
-    float x;
-    float y;
-} point2D;
-
-typedef struct {
-    float x;
-    float y;
-    float z;
-} point3D;
-
 typedef enum {
     kLinearInterpolation = 0,
     kCosineInterpolation = 1
@@ -31,9 +16,8 @@ typedef enum {
 @interface PerlinNoise : NSObject
 
 - (id)initWithSeed:(int)seed;
-- (float)perlin1DValueForPoint:(point1D)point;
-- (float)perlin2DValueForPoint:(point2D)point;
-- (float)perlin2DValueForPoint:(point2D)point;
+- (float)perlin1DValueForPoint:(float)x;
+- (float)perlin2DValueForPoint:(float)x :(float)y;
 
 @property int seed;
 @property int octaves;

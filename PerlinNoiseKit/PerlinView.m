@@ -46,10 +46,7 @@
     if (_is3D == YES) {
         for (int i = 0; i <= rect.size.width; i+=_resolution) {
             for (int j = 0; j <= rect.size.height; j+=_resolution) {
-                point2D px;
-                px.x = i + offset;
-                px.y = j + offset;
-                z = [_perlin perlin2DValueForPoint:px];
+                z = [_perlin perlin2DValueForPoint:(i + offset) :(j + offset)];
                 CGContextSetRGBFillColor(ctx, 0.0, 0.0, 0.0, fabsf(z));
                 CGContextFillRect(ctx, CGRectMake(i, j, _resolution, _resolution));
             }
@@ -59,9 +56,7 @@
         [p setLineWidth:2];
         [p moveToPoint:CGPointMake(0, ((rect.size.height) / 2))];
         for (int i = 0; i <= rect.size.width; i+=_resolution) {
-            point1D px;
-            px.x = i + offset;
-            z = [_perlin perlin1DValueForPoint:px] + ((rect.size.height) / 2);
+            z = [_perlin perlin1DValueForPoint:(i + offset)] + ((rect.size.height) / 2);
             [p addLineToPoint:CGPointMake(i, z)];
         }
         [p stroke];

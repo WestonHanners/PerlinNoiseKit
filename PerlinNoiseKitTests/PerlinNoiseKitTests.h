@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "PerlinNoise.h"
 
 @interface PerlinNoiseKitTests : SenTestCase
+
+- (void)test1DPerlinNoise;
 
 @end
