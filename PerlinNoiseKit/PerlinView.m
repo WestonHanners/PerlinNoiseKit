@@ -40,15 +40,14 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
     float z = 0;
 
     if (_is3D == YES) {
         for (int i = 0; i <= rect.size.width; i+=_resolution) {
             for (int j = 0; j <= rect.size.height; j+=_resolution) {
                 z = [_perlin perlin2DValueForPoint:(i + offset) :(j + offset)];
-                CGContextSetRGBFillColor(ctx, 0.0, 0.0, 0.0, fabsf(z));
-                CGContextFillRect(ctx, CGRectMake(i, j, _resolution, _resolution));
+                [[UIColor colorWithWhite:fabsf(z) alpha:1] setFill];
+                UIRectFill(CGRectMake(i, j, _resolution, _resolution));
             }
         }
     } else {
