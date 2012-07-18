@@ -61,8 +61,8 @@
 		ADADB05215B6C817004A5510 /* PerlinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinView.m; sourceTree = "<group>"; };
 		ADADB05415B6C826004A5510 /* PerlinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinViewController.h; sourceTree = "<group>"; };
 		ADADB05515B6C826004A5510 /* PerlinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinViewController.m; sourceTree = "<group>"; };
-		ADADB05715B6C837004A5510 /* perlin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin57.png; sourceTree = "<group>"; };
-		ADADB05915B6C83B004A5510 /* perlin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin114.png; sourceTree = "<group>"; };
+		ADADB05715B6C837004A5510 /* perlin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perlin57.png; path = ../perlin57.png; sourceTree = "<group>"; };
+		ADADB05915B6C83B004A5510 /* perlin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perlin114.png; path = ../perlin114.png; sourceTree = "<group>"; };
 		ADADB05B15B6C85F004A5510 /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
 		ADADB05D15B6C881004A5510 /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +94,6 @@
 		ADADB00E15B6C79D004A5510 = {
 			isa = PBXGroup;
 			children = (
-				ADADB05915B6C83B004A5510 /* perlin114.png */,
-				ADADB05715B6C837004A5510 /* perlin57.png */,
 				ADADB04C15B6C7C1004A5510 /* Class */,
 				ADADB02315B6C79D004A5510 /* PerlinNoiseKit */,
 				ADADB03B15B6C79E004A5510 /* PerlinNoiseKitTests */,
@@ -143,6 +141,8 @@
 		ADADB02415B6C79D004A5510 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ADADB05915B6C83B004A5510 /* perlin114.png */,
+				ADADB05715B6C837004A5510 /* perlin57.png */,
 				ADADB02515B6C79D004A5510 /* PerlinNoiseKit-Info.plist */,
 				ADADB02615B6C79D004A5510 /* InfoPlist.strings */,
 				ADADB02915B6C79D004A5510 /* main.m */,
