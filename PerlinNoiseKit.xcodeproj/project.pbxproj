@@ -18,6 +18,14 @@
 		ADADB03815B6C79E004A5510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01F15B6C79D004A5510 /* Foundation.framework */; };
 		ADADB04015B6C79E004A5510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADADB03E15B6C79E004A5510 /* InfoPlist.strings */; };
 		ADADB04315B6C79E004A5510 /* PerlinNoiseKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB04215B6C79E004A5510 /* PerlinNoiseKitTests.m */; };
+		ADADB04F15B6C7FC004A5510 /* PerlinNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB04E15B6C7FC004A5510 /* PerlinNoise.m */; };
+		ADADB05015B6C7FC004A5510 /* PerlinNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB04E15B6C7FC004A5510 /* PerlinNoise.m */; };
+		ADADB05315B6C817004A5510 /* PerlinView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB05215B6C817004A5510 /* PerlinView.m */; };
+		ADADB05615B6C826004A5510 /* PerlinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB05515B6C826004A5510 /* PerlinViewController.m */; };
+		ADADB05815B6C837004A5510 /* perlin57.png in Resources */ = {isa = PBXBuildFile; fileRef = ADADB05715B6C837004A5510 /* perlin57.png */; };
+		ADADB05A15B6C83B004A5510 /* perlin114.png in Resources */ = {isa = PBXBuildFile; fileRef = ADADB05915B6C83B004A5510 /* perlin114.png */; };
+		ADADB05C15B6C85F004A5510 /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADADB05B15B6C85F004A5510 /* Storyboard-iPhone.storyboard */; };
+		ADADB05E15B6C881004A5510 /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADADB05D15B6C881004A5510 /* Storyboard-iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +43,28 @@
 		ADADB01D15B6C79D004A5510 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADADB01F15B6C79D004A5510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ADADB02115B6C79D004A5510 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		ADADB02515B6C79D004A5510 /* PerlinNoiseKit-Info.plist */ = {isa = PBXFileReference; path = "PerlinNoiseKit-Info.plist"; sourceTree = "<group>"; };
+		ADADB02515B6C79D004A5510 /* PerlinNoiseKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PerlinNoiseKit-Info.plist"; sourceTree = "<group>"; };
 		ADADB02715B6C79D004A5510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADADB02915B6C79D004A5510 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ADADB02B15B6C79D004A5510 /* PerlinNoiseKit-Prefix.pch */ = {isa = PBXFileReference; path = "PerlinNoiseKit-Prefix.pch"; sourceTree = "<group>"; };
-		ADADB02C15B6C79D004A5510 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADADB02B15B6C79D004A5510 /* PerlinNoiseKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerlinNoiseKit-Prefix.pch"; sourceTree = "<group>"; };
+		ADADB02C15B6C79D004A5510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ADADB02D15B6C79D004A5510 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerlinNoiseKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADADB03515B6C79E004A5510 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		ADADB03D15B6C79E004A5510 /* PerlinNoiseKitTests-Info.plist */ = {isa = PBXFileReference; path = "PerlinNoiseKitTests-Info.plist"; sourceTree = "<group>"; };
+		ADADB03D15B6C79E004A5510 /* PerlinNoiseKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PerlinNoiseKitTests-Info.plist"; sourceTree = "<group>"; };
 		ADADB03F15B6C79E004A5510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ADADB04115B6C79E004A5510 /* PerlinNoiseKitTests.h */ = {isa = PBXFileReference; path = PerlinNoiseKitTests.h; sourceTree = "<group>"; };
+		ADADB04115B6C79E004A5510 /* PerlinNoiseKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerlinNoiseKitTests.h; sourceTree = "<group>"; };
 		ADADB04215B6C79E004A5510 /* PerlinNoiseKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerlinNoiseKitTests.m; sourceTree = "<group>"; };
+		ADADB04D15B6C7FC004A5510 /* PerlinNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoise.h; sourceTree = "<group>"; };
+		ADADB04E15B6C7FC004A5510 /* PerlinNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoise.m; sourceTree = "<group>"; };
+		ADADB05115B6C817004A5510 /* PerlinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinView.h; sourceTree = "<group>"; };
+		ADADB05215B6C817004A5510 /* PerlinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinView.m; sourceTree = "<group>"; };
+		ADADB05415B6C826004A5510 /* PerlinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinViewController.h; sourceTree = "<group>"; };
+		ADADB05515B6C826004A5510 /* PerlinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinViewController.m; sourceTree = "<group>"; };
+		ADADB05715B6C837004A5510 /* perlin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin57.png; sourceTree = "<group>"; };
+		ADADB05915B6C83B004A5510 /* perlin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin114.png; sourceTree = "<group>"; };
+		ADADB05B15B6C85F004A5510 /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		ADADB05D15B6C881004A5510 /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,9 @@
 		ADADB00E15B6C79D004A5510 = {
 			isa = PBXGroup;
 			children = (
+				ADADB05915B6C83B004A5510 /* perlin114.png */,
+				ADADB05715B6C837004A5510 /* perlin57.png */,
+				ADADB04C15B6C7C1004A5510 /* Class */,
 				ADADB02315B6C79D004A5510 /* PerlinNoiseKit */,
 				ADADB03B15B6C79E004A5510 /* PerlinNoiseKitTests */,
 				ADADB01C15B6C79D004A5510 /* Frameworks */,
@@ -106,8 +127,14 @@
 		ADADB02315B6C79D004A5510 /* PerlinNoiseKit */ = {
 			isa = PBXGroup;
 			children = (
+				ADADB05415B6C826004A5510 /* PerlinViewController.h */,
+				ADADB05515B6C826004A5510 /* PerlinViewController.m */,
+				ADADB05115B6C817004A5510 /* PerlinView.h */,
+				ADADB05215B6C817004A5510 /* PerlinView.m */,
 				ADADB02C15B6C79D004A5510 /* AppDelegate.h */,
 				ADADB02D15B6C79D004A5510 /* AppDelegate.m */,
+				ADADB05B15B6C85F004A5510 /* Storyboard-iPhone.storyboard */,
+				ADADB05D15B6C881004A5510 /* Storyboard-iPad.storyboard */,
 				ADADB02415B6C79D004A5510 /* Supporting Files */,
 			);
 			path = PerlinNoiseKit;
@@ -141,6 +168,15 @@
 				ADADB03E15B6C79E004A5510 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADADB04C15B6C7C1004A5510 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				ADADB04D15B6C7FC004A5510 /* PerlinNoise.h */,
+				ADADB04E15B6C7FC004A5510 /* PerlinNoise.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +251,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADADB02815B6C79D004A5510 /* InfoPlist.strings in Resources */,
+				ADADB05815B6C837004A5510 /* perlin57.png in Resources */,
+				ADADB05A15B6C83B004A5510 /* perlin114.png in Resources */,
+				ADADB05C15B6C85F004A5510 /* Storyboard-iPhone.storyboard in Resources */,
+				ADADB05E15B6C881004A5510 /* Storyboard-iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +291,9 @@
 			files = (
 				ADADB02A15B6C79D004A5510 /* main.m in Sources */,
 				ADADB02E15B6C79D004A5510 /* AppDelegate.m in Sources */,
+				ADADB04F15B6C7FC004A5510 /* PerlinNoise.m in Sources */,
+				ADADB05315B6C817004A5510 /* PerlinView.m in Sources */,
+				ADADB05615B6C826004A5510 /* PerlinViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADADB04315B6C79E004A5510 /* PerlinNoiseKitTests.m in Sources */,
+				ADADB05015B6C7FC004A5510 /* PerlinNoise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
