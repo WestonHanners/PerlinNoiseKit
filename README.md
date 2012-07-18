@@ -40,3 +40,5 @@ You can manipulate the output using the following properties.
 Thanks to Hugo Elias for his wonderful page about perlin noise
 
 http://freespace.virgin.net/hugo.elias/models/m_perlin.htm
+
+Also thanks for my friend Tim Winter who always helps me find my bugs.
