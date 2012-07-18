@@ -52,7 +52,7 @@
         for (int i = 0; i <= rect.size.width; i+=_resolution) {
             for (int j = 0; j <= rect.size.height; j+=_resolution) {
                 z = [_perlin perlin2DValueForPoint:(i + offset) :(j + offset)];
-                [[UIColor colorWithWhite:fabsf(z) alpha:1] setFill];
+                [[UIColor colorWithWhite:fabsf(z*2) alpha:1] setFill];
                 UIRectFill(CGRectMake(i, j, _resolution, _resolution));
                 [self debug:z];
             }

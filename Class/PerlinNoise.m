@@ -65,12 +65,15 @@
 
 - (float)perlin1DValueForPoint:(float)x {
     float value = 0;
+    float frequency = 1;
+    float amplitude = 0.5;
     for (int i = 0;i < _octaves;i++) {
-        float frequency = pow(2,i);
-        float amplitude = pow(_persistence,i);
-        value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
+        value = value + [self interpolatedNoise1D:(x * _frequency)] * frequency * amplitude;
+        frequency *= 2;
+        if (i < _octaves) amplitude *= _persistence;
+        
     }
-    return value * _scale;
+    return value;
 }
 
 #pragma mark - 2D Perlin Functions
@@ -118,10 +121,12 @@
 
 - (float)perlin2DValueForPoint:(float)x :(float)y{
     float value = 0;
+    float frequency = 1;
+    float amplitude = 0.5;
     for (int i = 0;i < _octaves;i++) {
-        float frequency = pow(2,i);
-        float amplitude = pow(_persistence,i);
         value = value + [self interpolatedNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
+        frequency *= 2;
+        if (i < _octaves) amplitude *= _persistence;
 
     }
     return value;
