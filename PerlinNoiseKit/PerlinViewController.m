@@ -11,7 +11,7 @@
 
 @interface PerlinViewController () {
     PerlinView *pview;
-    PerlinNoise * perlin;
+    PerlinNoise *perlin;
     UISlider *persistance;
     UISlider *octaves;
     UISlider *frequency;
@@ -19,7 +19,6 @@
     UISwitch *interpolation;
     UISwitch *is2DSwitch;
     UISlider *resolution;
-
 }
 
 @end
@@ -28,24 +27,34 @@
 
 
 - (void)updates:(id)sender {
+    
+    // Update PerlinNoise class based on slider values.
+    
+    // 1D or 2D?
     if (is2DSwitch.on == YES) {
         pview.is2D = YES;
     } else {
         pview.is2D = NO;
     }
+    
+    // Interpolated or not?
     if (interpolation.on == YES) {
         perlin.interpolationMethod = kCosineInterpolation;
     } else {
         perlin.interpolationMethod = kLinearInterpolation;
     }
+    
+    // Set perlin properties.
     pview.resolution = resolution.value;
     perlin.persistence = persistance.value;
     perlin.frequency = frequency.value;
     perlin.scale = scale.value;
     perlin.octaves = octaves.value;
     
-    // Print our values to the log for debugging
+    // Print our values to the log for debugging.
     NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\nOctaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
+    
+    // Re-draw image.
     [pview setNeedsDisplay];
 
 }
@@ -64,7 +73,6 @@
     resolution = [[UISlider alloc] initWithFrame:CGRectMake(0, 370, 320, 30)];
     interpolation = [[UISwitch alloc] initWithFrame:CGRectMake(180, 420, 100, 100)];
     is2DSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(70, 420, 100, 100)];
-
 
     persistance.maximumValue = 1.00f;
     persistance.minimumValue = 0.00f;
@@ -110,9 +118,7 @@
     pview = [[PerlinView alloc] initWithFrame:CGRectMake(0, 0, 320, 250)];
     pview.perlin = perlin;
     [self updates:nil];
-    [self.view addSubview:pview];
-    
+    [self.view addSubview:pview];    
 }
-
 
 @end
