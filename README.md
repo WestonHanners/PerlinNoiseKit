@@ -24,6 +24,7 @@ You can manipulate the output using the following properties.
 - .frequency (the distance between the returned values)
 
 - .interpolationType (this can be kLinearInterpolation or kCosineInterpolation, CosineInterpolation is slower)
+
 ---------------------------------------------------------------
 Thanks to Hugo Elias for his wonderful page about perlin noise
 
