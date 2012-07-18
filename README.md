@@ -1,6 +1,5 @@
 Perlin Noise for Objective-C
 ============================
-
 ------------------------------------------------------
 
 Usage:
@@ -25,8 +24,7 @@ You can manipulate the output using the following properties.
 - .frequency (the distance between the returned values)
 
 - .interpolationType (this can be kLinearInterpolation or kCosineInterpolation, CosineInterpolation is slower)
-
-
+---------------------------------------------------------------
 Thanks to Hugo Elias for his wonderful page about perlin noise
 
 http://freespace.virgin.net/hugo.elias/models/m_perlin.htm
