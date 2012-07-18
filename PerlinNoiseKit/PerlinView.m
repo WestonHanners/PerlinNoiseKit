@@ -34,6 +34,12 @@
     [self setNeedsDisplay];
 }
 
+- (void)debug:(float)z {
+    if (z > 1 || z < -1) {
+        NSLog(@"z:%f is out of range.", z);
+    }
+}
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -48,15 +54,17 @@
                 z = [_perlin perlin2DValueForPoint:(i + offset) :(j + offset)];
                 [[UIColor colorWithWhite:fabsf(z) alpha:1] setFill];
                 UIRectFill(CGRectMake(i, j, _resolution, _resolution));
+                [self debug:z];
             }
         }
     } else {
         UIBezierPath *p = [[UIBezierPath alloc] init];
         [p setLineWidth:2];
-        [p moveToPoint:CGPointMake(0, ((rect.size.height) / 2))];
+        [p moveToPoint:CGPointMake(0, [_perlin perlin1DValueForPoint:0])];
         for (int i = 0; i <= rect.size.width; i+=_resolution) {
-            z = [_perlin perlin1DValueForPoint:(i + offset)] + ((rect.size.height) / 2);
-            [p addLineToPoint:CGPointMake(i, z)];
+            z = [_perlin perlin1DValueForPoint:(i + offset)];
+            [p addLineToPoint:CGPointMake(i, z + ((rect.size.height) / 2))];
+            [self debug:(z / _perlin.scale)];
         }
         [p stroke];
             

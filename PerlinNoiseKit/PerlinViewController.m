@@ -43,6 +43,9 @@
     perlin.frequency = frequency.value;
     perlin.scale = scale.value;
     perlin.octaves = octaves.value;
+    
+    // Print our values to the log for debugging
+    NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\n Octaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
     [pview setNeedsDisplay];
 
 }
