@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) PerlinNoise *perlin;
 
-@property BOOL is3D;
+@property BOOL is2D;
 @property int resolution;
 - (void)scroll:(id)sender;
 @end

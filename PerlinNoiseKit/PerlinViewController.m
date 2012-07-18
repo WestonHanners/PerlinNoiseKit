@@ -17,7 +17,7 @@
     UISlider *frequency;
     UISlider *scale;
     UISwitch *interpolation;
-    UISwitch *is3DSwitch;
+    UISwitch *is2DSwitch;
     UISlider *resolution;
 
 }
@@ -28,10 +28,10 @@
 
 
 - (void)updates:(id)sender {
-    if (is3DSwitch.on == YES) {
-        pview.is3D = YES;
+    if (is2DSwitch.on == YES) {
+        pview.is2D = YES;
     } else {
-        pview.is3D = NO;
+        pview.is2D = NO;
     }
     if (interpolation.on == YES) {
         perlin.interpolationMethod = kCosineInterpolation;
@@ -45,7 +45,7 @@
     perlin.octaves = octaves.value;
     
     // Print our values to the log for debugging
-    NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\n Octaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
+    NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\nOctaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
     [pview setNeedsDisplay];
 
 }
@@ -63,7 +63,7 @@
     scale = [[UISlider alloc] initWithFrame:CGRectMake(0, 340, 320, 30)];
     resolution = [[UISlider alloc] initWithFrame:CGRectMake(0, 370, 320, 30)];
     interpolation = [[UISwitch alloc] initWithFrame:CGRectMake(180, 420, 100, 100)];
-    is3DSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(70, 420, 100, 100)];
+    is2DSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(70, 420, 100, 100)];
 
 
     persistance.maximumValue = 1.00f;
@@ -97,7 +97,7 @@
     [self.view addSubview:scale];
     [self.view addSubview:interpolation];
     [self.view addSubview:resolution];
-    [self.view addSubview:is3DSwitch];
+    [self.view addSubview:is2DSwitch];
     
     [persistance addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
     [octaves addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
@@ -105,7 +105,7 @@
     [scale addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
     [resolution addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
     [interpolation addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [is3DSwitch addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
+    [is2DSwitch addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
 
     pview = [[PerlinView alloc] initWithFrame:CGRectMake(0, 0, 320, 250)];
     pview.perlin = perlin;
