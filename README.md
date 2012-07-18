@@ -2,7 +2,7 @@ Perlin Noise for Objective-C
 ============================
 ------------------------------------------------------
 
-This is a Perlin Noise Generator based on information from [http://freespace.virgin.net/hugo.elias/models/m_perlin.htm "Hugo Elias's Perlin Noise Page"].
+This is a Perlin Noise Generator based on information from [Hugo Elias](http://freespace.virgin.net/hugo.elias/models/m_perlin.htm "Hugo Elias's Perlin Noise Page").
 
 Usage:
 ------
