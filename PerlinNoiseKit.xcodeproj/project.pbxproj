@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2C6B1A15B8611E00EA3C98 /* perlin72.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2C6B1915B8611E00EA3C98 /* perlin72.png */; };
+		AD2C6B1D15B8617300EA3C98 /* perlin144.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2C6B1C15B8617300EA3C98 /* perlin144.png */; };
 		ADADB01E15B6C79D004A5510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01D15B6C79D004A5510 /* UIKit.framework */; };
 		ADADB02015B6C79D004A5510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01F15B6C79D004A5510 /* Foundation.framework */; };
 		ADADB02215B6C79D004A5510 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB02115B6C79D004A5510 /* CoreGraphics.framework */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD2C6B1915B8611E00EA3C98 /* perlin72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin72.png; sourceTree = "<group>"; };
+		AD2C6B1C15B8617300EA3C98 /* perlin144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin144.png; sourceTree = "<group>"; };
 		ADADB01915B6C79D004A5510 /* PerlinNoiseKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerlinNoiseKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADADB01D15B6C79D004A5510 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADADB01F15B6C79D004A5510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +98,8 @@
 		ADADB00E15B6C79D004A5510 = {
 			isa = PBXGroup;
 			children = (
+				AD2C6B1C15B8617300EA3C98 /* perlin144.png */,
+				AD2C6B1915B8611E00EA3C98 /* perlin72.png */,
 				ADADB04C15B6C7C1004A5510 /* Class */,
 				ADADB02315B6C79D004A5510 /* PerlinNoiseKit */,
 				ADADB03B15B6C79E004A5510 /* PerlinNoiseKitTests */,
@@ -255,6 +261,8 @@
 				ADADB05A15B6C83B004A5510 /* perlin114.png in Resources */,
 				ADADB05C15B6C85F004A5510 /* Storyboard-iPhone.storyboard in Resources */,
 				ADADB05E15B6C881004A5510 /* Storyboard-iPad.storyboard in Resources */,
+				AD2C6B1A15B8611E00EA3C98 /* perlin72.png in Resources */,
+				AD2C6B1D15B8617300EA3C98 /* perlin144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,10 +394,13 @@
 		ADADB04715B6C79E004A5510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lionel Hanners (Y4C7UEZZLP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
 				INFOPLIST_FILE = "PerlinNoiseKit/PerlinNoiseKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25C37F6B-F409-406A-AEBF-270892FA83BB";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,10 +408,13 @@
 		ADADB04815B6C79E004A5510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lionel Hanners (Y4C7UEZZLP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
 				INFOPLIST_FILE = "PerlinNoiseKit/PerlinNoiseKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25C37F6B-F409-406A-AEBF-270892FA83BB";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -458,6 +472,7 @@
 				ADADB04815B6C79E004A5510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADADB04915B6C79E004A5510 /* Build configuration list for PBXNativeTarget "PerlinNoiseKitTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +481,7 @@
 				ADADB04B15B6C79E004A5510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

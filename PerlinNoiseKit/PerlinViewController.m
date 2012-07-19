@@ -10,115 +10,94 @@
 #import "PerlinView.h"
 
 @interface PerlinViewController () {
-    PerlinView *pview;
     PerlinNoise *perlin;
-    UISlider *persistance;
-    UISlider *octaves;
-    UISlider *frequency;
-    UISlider *scale;
-    UISwitch *interpolation;
-    UISwitch *is2DSwitch;
-    UISlider *resolution;
 }
 
 @end
 
 @implementation PerlinViewController
+@synthesize pview;
+@synthesize sliderOctaves;
+@synthesize sliderFrequency;
+@synthesize sliderPersistence;
+@synthesize sliderResolution;
+@synthesize sliderScale;
+@synthesize switch2D;
+@synthesize switchCosine;
+@synthesize switchSmoothing;
+@synthesize labelOctaves;
+@synthesize labelFrequency;
+@synthesize labelPersistence;
+@synthesize labelResolution;
+@synthesize labelScale;
+@synthesize textSeed;
 
+- (IBAction)updates:(id)sender {
+    labelOctaves.text = [NSString stringWithFormat:@"%f", sliderOctaves.value];
+    perlin.octaves = sliderOctaves.value;
+    labelFrequency.text = [NSString stringWithFormat:@"%f", sliderFrequency.value];
+    perlin.frequency = sliderFrequency.value;
+    labelPersistence.text = [NSString stringWithFormat:@"%f", sliderPersistence.value];
+    perlin.persistence = sliderPersistence.value;
+    labelResolution.text = [NSString stringWithFormat:@"%f", sliderResolution.value];
+    labelScale.text = [NSString stringWithFormat:@"%f", sliderScale.value];
+}
 
-- (void)updates:(id)sender {
-    
-    // Update PerlinNoise class based on slider values.
-    
+- (IBAction)reload:(id)sender {
     // 1D or 2D?
-    if (is2DSwitch.on == YES) {
+    if (switch2D.on == YES) {
         pview.is2D = YES;
     } else {
         pview.is2D = NO;
     }
     
+    
     // Interpolated or not?
-    if (interpolation.on == YES) {
+    if (switchCosine.on == YES) {
         perlin.interpolationMethod = kCosineInterpolation;
     } else {
         perlin.interpolationMethod = kLinearInterpolation;
     }
     
     // Set perlin properties.
-    pview.resolution = resolution.value;
-    perlin.persistence = persistance.value;
-    perlin.frequency = frequency.value;
-    perlin.scale = scale.value;
-    perlin.octaves = octaves.value;
+    pview.resolution = sliderResolution.value;
+    perlin.persistence = sliderPersistence.value;
+    perlin.frequency = sliderFrequency.value;
+    perlin.scale = sliderScale.value;
+    perlin.octaves = sliderOctaves.value;
+    perlin.seed = [textSeed.text intValue];
     
     // Print our values to the log for debugging.
     NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\nOctaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
     
-    // Re-draw image.
+    // Redraw.
     [pview setNeedsDisplay];
-
+    
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
     perlin = [[PerlinNoise alloc] initWithSeed:25];
-    
-    persistance = [[UISlider alloc] initWithFrame:CGRectMake(0, 250, 320, 30)];
-    octaves = [[UISlider alloc] initWithFrame:CGRectMake(0, 280, 320, 30)];
-    frequency = [[UISlider alloc] initWithFrame:CGRectMake(0, 310, 320, 30)];
-    scale = [[UISlider alloc] initWithFrame:CGRectMake(0, 340, 320, 30)];
-    resolution = [[UISlider alloc] initWithFrame:CGRectMake(0, 370, 320, 30)];
-    interpolation = [[UISwitch alloc] initWithFrame:CGRectMake(180, 420, 100, 100)];
-    is2DSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(70, 420, 100, 100)];
-
-    persistance.maximumValue = 1.00f;
-    persistance.minimumValue = 0.00f;
-    persistance.value = 0.0f;
-    persistance.continuous = YES;
-    
-    octaves.maximumValue = 5;
-    octaves.minimumValue = 1;
-    octaves.value = 1;
-    octaves.continuous = YES;
-    
-    frequency.maximumValue = 1.00f;
-    frequency.minimumValue = 0.00f;
-    frequency.value = 0.0f;
-    frequency.continuous = YES;
-    
-    scale.maximumValue = 100;
-    scale.minimumValue = 1;
-    scale.value = 1;
-    scale.continuous = YES;
-    
-    resolution.maximumValue = 50;
-    resolution.minimumValue = 1;
-    resolution.value = 1;
-    resolution.continuous = YES;
-
-    [self.view addSubview:persistance];
-    [self.view addSubview:octaves];
-    [self.view addSubview:frequency];
-    [self.view addSubview:scale];
-    [self.view addSubview:interpolation];
-    [self.view addSubview:resolution];
-    [self.view addSubview:is2DSwitch];
-    
-    [persistance addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [octaves addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [frequency addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [scale addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [resolution addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [interpolation addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-    [is2DSwitch addTarget:self action:@selector(updates:) forControlEvents:UIControlEventValueChanged];
-
-    pview = [[PerlinView alloc] initWithFrame:CGRectMake(0, 0, 320, 250)];
     pview.perlin = perlin;
-    [self updates:nil];
-    [self.view addSubview:pview];    
 }
 
+- (void)viewDidUnload {
+    [self setSliderOctaves:nil];
+    [self setSliderFrequency:nil];
+    [self setSliderResolution:nil];
+    [self setSliderScale:nil];
+    [self setSwitch2D:nil];
+    [self setSwitchCosine:nil];
+    [self setSwitchSmoothing:nil];
+    [self setLabelOctaves:nil];
+    [self setLabelFrequency:nil];
+    [self setLabelPersistence:nil];
+    [self setLabelResolution:nil];
+    [self setLabelScale:nil];
+    [self setTextSeed:nil];
+    [self setPview:nil];
+    [super viewDidUnload];
+}
 @end

@@ -16,6 +16,8 @@
 			<array>
 				<string>perlin57.png</string>
 				<string>perlin114.png</string>
+				<string>perlin72.png</string>
+				<string>perlin144.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -49,8 +51,6 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>

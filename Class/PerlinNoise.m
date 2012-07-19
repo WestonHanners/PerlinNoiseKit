@@ -16,11 +16,13 @@
 
 @implementation PerlinNoise
 
-@synthesize seed = _seed, octaves = _octaves, persistence = _persistence, scale = _scale, interpolationMethod = _interpolationMethod, frequency = _frequency;
+@synthesize seed = _seed, octaves = _octaves, persistence = _persistence, scale = _scale, interpolationMethod = _interpolationMethod, frequency = _frequency, smoothing = _smoothing;
 
 - (id)initWithSeed:(int)seed {
     if ((self = [super init])) {
         self.seed = seed;
+        self.smoothing = NO;
+        self.interpolationMethod = kLinearInterpolation;
     }
     return self;
 }
@@ -68,7 +70,12 @@
     float frequency = 1;
     float amplitude = 0.5;
     for (int i = 0;i < _octaves;i++) {
-        value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
+        if (_smoothing) {
+            value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
+        } else {
+            value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
+
+        }
         frequency *= 2;
         if (i < _octaves) { amplitude *= _persistence; }
     }
@@ -124,7 +131,12 @@
     float frequency = 1;
     float amplitude = 0.5;
     for (int i = 0;i < _octaves;i++) {
-        value = value + [self interpolatedNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
+        if (_smoothing) {
+            value = value + [self interpolatedNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
+        } else {
+            value = value + [self makeNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
+
+        }
         frequency *= 2;
         if (i < _octaves) { amplitude *= _persistence; }
         _functionSelector++;

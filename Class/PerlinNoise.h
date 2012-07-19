@@ -25,5 +25,6 @@ typedef enum {
 @property float scale;
 @property float frequency;
 @property interpolationType interpolationMethod;
+@property BOOL smoothing;
 
 @end
