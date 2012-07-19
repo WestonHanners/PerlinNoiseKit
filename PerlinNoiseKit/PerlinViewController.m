@@ -76,12 +76,13 @@
 }
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    perlin = [[PerlinNoise alloc] initWithSeed:25];
-    pview.perlin = perlin;
-}
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    NSLog(@"%@", self.view);
+//    perlin = [[PerlinNoise alloc] initWithSeed:25];
+//    pview.perlin = perlin;
+//}
 
 - (void)viewDidUnload {
     [self setSliderOctaves:nil];
