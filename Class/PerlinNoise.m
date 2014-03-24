@@ -16,13 +16,15 @@
 
 @implementation PerlinNoise
 
-@synthesize seed = _seed, octaves = _octaves, persistence = _persistence, scale = _scale, interpolationMethod = _interpolationMethod, frequency = _frequency, smoothing = _smoothing;
-
 - (id)initWithSeed:(int)seed {
     if ((self = [super init])) {
         self.seed = seed;
         self.smoothing = NO;
         self.interpolationMethod = kLinearInterpolation;
+        self.octaves = 1;
+        self.scale = 1;
+        self.frequency = 0.5;
+        self.persistence = sqrt(self.amplitude);
     }
     return self;
 }
@@ -40,10 +42,9 @@
 #pragma mark - 1D Perlin Functions
 
 - (float)makeNoise1D:(int)x {
-    int n = x * 57;
-    n = (n >> 13) ^ n;
-    n = (n * (n * n * (int)_seed + 19990303) + 1376312589) & 0x7fffffff;
-    return ( 1.0 - ( (n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0);
+    x = (x >> 13) ^ x;
+    x = (x * (x * x * (int)_seed + 19990303) + 1376312589) & RAND_MAX;
+    return ( 1.0 - ( (x * (x * x * 15731 + 789221) + 1376312589) & RAND_MAX) / 1073741824.0);
 }
 
 - (float)smoothedNoise1D:(float)x {
@@ -67,18 +68,22 @@
 
 - (float)perlin1DValueForPoint:(float)x {
     float value = 0;
-    float frequency = 1;
-    float amplitude = 0.5;
+    float persistence = _persistence;
+    float frequency = _frequency;
+    float amplitude;
     for (int i = 0;i < _octaves;i++) {
+        
+        frequency = powf(frequency, i);
+        amplitude = powf(persistence, i);
+        
         if (_smoothing) {
-            value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
+            value = value + [self interpolatedNoise1D:(x * frequency) * frequency] * amplitude;
         } else {
-            value = value + [self interpolatedNoise1D:(x * _frequency) * frequency] * amplitude;
-
+            value = value + [self makeNoise1D:(x * frequency) * frequency] * amplitude;
         }
-        frequency *= 2;
-        if (i < _octaves) { amplitude *= _persistence; }
+        
     }
+    
     return value *  _scale;
 }
 
@@ -87,8 +92,8 @@
 - (float)makeNoise2D:(int)x :(int)y {
     int n = x + y * 57;
     n = (n >> 13) ^  (n * _functionSelector);
-    n = (n * (n * n * (int)_seed + 19990303) + 1376312589) & 0x7fffffff;
-    return ( 1.0 - ( (n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0);
+    n = (n * (n * n * (int)_seed + 19990303) + 1376312589) & RAND_MAX;
+    return ( 1.0 - ( (n * (n * n * 15731 + 789221) + 1376312589) & RAND_MAX) / 1073741824.0);
 }
 
 - (float)smoothedNoise2D:(float)x :(float)y {
@@ -128,17 +133,21 @@
 - (float)perlin2DValueForPoint:(float)x :(float)y{
     _functionSelector = 1;
     float value = 0;
-    float frequency = 1;
-    float amplitude = 0.5;
+    float persistence = _persistence;
+    float frequency = _frequency;
+    float amplitude;
     for (int i = 0;i < _octaves;i++) {
+        
+        frequency = powf(frequency, i);
+        amplitude = powf(persistence, i);
+        
         if (_smoothing) {
             value = value + [self interpolatedNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
         } else {
             value = value + [self makeNoise2D:(x * _frequency) * frequency :(y * _frequency) * frequency] * amplitude;
 
         }
-        frequency *= 2;
-        if (i < _octaves) { amplitude *= _persistence; }
+
         _functionSelector++;
     }
     return value / _octaves;

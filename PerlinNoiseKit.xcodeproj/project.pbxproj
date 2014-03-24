@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD2C6B1A15B8611E00EA3C98 /* perlin72.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2C6B1915B8611E00EA3C98 /* perlin72.png */; };
-		AD2C6B1D15B8617300EA3C98 /* perlin144.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2C6B1C15B8617300EA3C98 /* perlin144.png */; };
+		7C84020C18E06D76005ADC05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C84020B18E06D76005ADC05 /* Images.xcassets */; };
 		ADADB01E15B6C79D004A5510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01D15B6C79D004A5510 /* UIKit.framework */; };
 		ADADB02015B6C79D004A5510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01F15B6C79D004A5510 /* Foundation.framework */; };
 		ADADB02215B6C79D004A5510 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB02115B6C79D004A5510 /* CoreGraphics.framework */; };
 		ADADB02815B6C79D004A5510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADADB02615B6C79D004A5510 /* InfoPlist.strings */; };
 		ADADB02A15B6C79D004A5510 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB02915B6C79D004A5510 /* main.m */; };
 		ADADB02E15B6C79D004A5510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADADB02D15B6C79D004A5510 /* AppDelegate.m */; };
-		ADADB03615B6C79E004A5510 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB03515B6C79E004A5510 /* SenTestingKit.framework */; };
 		ADADB03715B6C79E004A5510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01D15B6C79D004A5510 /* UIKit.framework */; };
 		ADADB03815B6C79E004A5510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADADB01F15B6C79D004A5510 /* Foundation.framework */; };
 		ADADB04015B6C79E004A5510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADADB03E15B6C79E004A5510 /* InfoPlist.strings */; };
@@ -41,8 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD2C6B1915B8611E00EA3C98 /* perlin72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin72.png; sourceTree = "<group>"; };
-		AD2C6B1C15B8617300EA3C98 /* perlin144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perlin144.png; sourceTree = "<group>"; };
+		7C84020B18E06D76005ADC05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ADADB01915B6C79D004A5510 /* PerlinNoiseKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerlinNoiseKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADADB01D15B6C79D004A5510 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADADB01F15B6C79D004A5510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,8 +50,7 @@
 		ADADB02B15B6C79D004A5510 /* PerlinNoiseKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PerlinNoiseKit-Prefix.pch"; sourceTree = "<group>"; };
 		ADADB02C15B6C79D004A5510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ADADB02D15B6C79D004A5510 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerlinNoiseKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADADB03515B6C79E004A5510 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerlinNoiseKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADADB03D15B6C79E004A5510 /* PerlinNoiseKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PerlinNoiseKitTests-Info.plist"; sourceTree = "<group>"; };
 		ADADB03F15B6C79E004A5510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADADB04115B6C79E004A5510 /* PerlinNoiseKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerlinNoiseKitTests.h; sourceTree = "<group>"; };
@@ -86,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADADB03615B6C79E004A5510 /* SenTestingKit.framework in Frameworks */,
 				ADADB03715B6C79E004A5510 /* UIKit.framework in Frameworks */,
 				ADADB03815B6C79E004A5510 /* Foundation.framework in Frameworks */,
 			);
@@ -98,8 +93,6 @@
 		ADADB00E15B6C79D004A5510 = {
 			isa = PBXGroup;
 			children = (
-				AD2C6B1C15B8617300EA3C98 /* perlin144.png */,
-				AD2C6B1915B8611E00EA3C98 /* perlin72.png */,
 				ADADB04C15B6C7C1004A5510 /* Class */,
 				ADADB02315B6C79D004A5510 /* PerlinNoiseKit */,
 				ADADB03B15B6C79E004A5510 /* PerlinNoiseKitTests */,
@@ -112,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				ADADB01915B6C79D004A5510 /* PerlinNoiseKit.app */,
-				ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.octest */,
+				ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +116,6 @@
 				ADADB01D15B6C79D004A5510 /* UIKit.framework */,
 				ADADB01F15B6C79D004A5510 /* Foundation.framework */,
 				ADADB02115B6C79D004A5510 /* CoreGraphics.framework */,
-				ADADB03515B6C79E004A5510 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +131,7 @@
 				ADADB02D15B6C79D004A5510 /* AppDelegate.m */,
 				ADADB05B15B6C85F004A5510 /* Storyboard-iPhone.storyboard */,
 				ADADB05D15B6C881004A5510 /* Storyboard-iPad.storyboard */,
+				7C84020B18E06D76005ADC05 /* Images.xcassets */,
 				ADADB02415B6C79D004A5510 /* Supporting Files */,
 			);
 			path = PerlinNoiseKit;
@@ -221,8 +214,8 @@
 			);
 			name = PerlinNoiseKitTests;
 			productName = PerlinNoiseKitTests;
-			productReference = ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = ADADB03415B6C79E004A5510 /* PerlinNoiseKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -230,7 +223,8 @@
 		ADADB01015B6C79D004A5510 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Hanners Software";
 			};
 			buildConfigurationList = ADADB01315B6C79D004A5510 /* Build configuration list for PBXProject "PerlinNoiseKit" */;
@@ -257,12 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADADB02815B6C79D004A5510 /* InfoPlist.strings in Resources */,
+				7C84020C18E06D76005ADC05 /* Images.xcassets in Resources */,
 				ADADB05815B6C837004A5510 /* perlin57.png in Resources */,
 				ADADB05A15B6C83B004A5510 /* perlin114.png in Resources */,
 				ADADB05C15B6C85F004A5510 /* Storyboard-iPhone.storyboard in Resources */,
 				ADADB05E15B6C881004A5510 /* Storyboard-iPad.storyboard in Resources */,
-				AD2C6B1A15B8611E00EA3C98 /* perlin72.png in Resources */,
-				AD2C6B1D15B8617300EA3C98 /* perlin144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +341,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -361,10 +359,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,14 +376,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -394,6 +404,8 @@
 		ADADB04715B6C79E004A5510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lionel Hanners (Y4C7UEZZLP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
@@ -408,6 +420,8 @@
 		ADADB04815B6C79E004A5510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lionel Hanners (Y4C7UEZZLP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
@@ -425,14 +439,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PerlinNoiseKit.app/PerlinNoiseKit";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
 				INFOPLIST_FILE = "PerlinNoiseKitTests/PerlinNoiseKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -442,14 +455,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PerlinNoiseKit.app/PerlinNoiseKit";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PerlinNoiseKit/PerlinNoiseKit-Prefix.pch";
 				INFOPLIST_FILE = "PerlinNoiseKitTests/PerlinNoiseKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

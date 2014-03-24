@@ -23,6 +23,20 @@
         // Initialization code
         //[self setBackgroundColor:[UIColor whiteColor]];
         //timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(scroll:) userInfo:nil repeats:YES];
+        _perlin = [[PerlinNoise alloc] initWithSeed:25];
+        offset = 0;
+        _is2D = NO;
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+            // Initialization code
+            //[self setBackgroundColor:[UIColor whiteColor]];
+            //timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(scroll:) userInfo:nil repeats:YES];
+        _perlin = [[PerlinNoise alloc] initWithSeed:25];
         offset = 0;
         _is2D = NO;
     }
@@ -44,33 +58,30 @@
     }
 }
 
+- (void)drawRect:(CGRect)rect {
+    
 
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-    float z = 0;
-
-    if (_is2D == YES) {
-        for (int i = 0; i <= rect.size.width; i+=_resolution) {
-            for (int j = 0; j <= rect.size.height; j+=_resolution) {
-                z = [_perlin perlin2DValueForPoint:(i + offset) :(j + offset)];
-                [[UIColor colorWithWhite:fabsf(z * 3) alpha:1] setFill];
-                UIRectFill(CGRectMake(i, j, _resolution, _resolution));
-                [self debug:z];
-            }
-        }
-    } else {
-        UIBezierPath *p = [[UIBezierPath alloc] init];
-        [p setLineWidth:2];
-        [p moveToPoint:CGPointMake(0, [_perlin perlin1DValueForPoint:0])];
-        for (int i = 0; i <= rect.size.width; i+=_resolution) {
-            z = [_perlin perlin1DValueForPoint:(i + offset)];
-            [p addLineToPoint:CGPointMake(i, ((z * 5) + (rect.size.height) / 2))];
-            [self debug:(z / _perlin.scale)];
-        }
-        [p stroke];
-            
+    int step = _resolution;
+    
+    if (!_resolution) {
+        step = 10;
     }
+    int maxStep = rect.size.width / _resolution;
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    
+    [[UIColor greenColor] setStroke];
+    
+    [path moveToPoint:CGPointMake(0, CGRectGetMidY(rect))];
+    
+    for (int x = 0; x <= CGRectGetMaxX(rect); x+=step) {
+        float y = [self.perlin perlin1DValueForPoint:x];
+        [path addLineToPoint:CGPointMake(x, y * 100 + CGRectGetMidY(rect))];
+        
+    }
+    
+    [path stroke];
 }
+
 
 @end

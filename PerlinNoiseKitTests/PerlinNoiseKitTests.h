@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Hanners Software. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "PerlinNoise.h"
 
-@interface PerlinNoiseKitTests : SenTestCase
+@interface PerlinNoiseKitTests : XCTestCase
 
 - (void)test1DPerlinNoise;
 
