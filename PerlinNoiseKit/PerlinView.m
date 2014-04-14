@@ -33,10 +33,6 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-            // Initialization code
-            //[self setBackgroundColor:[UIColor whiteColor]];
-            //timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(scroll:) userInfo:nil repeats:YES];
-        _perlin = [[PerlinNoise alloc] initWithSeed:25];
         offset = 0;
         _is2D = NO;
     }
@@ -60,27 +56,47 @@
 
 - (void)drawRect:(CGRect)rect {
     
-
     int step = _resolution;
     
     if (!_resolution) {
         step = 10;
     }
-    int maxStep = rect.size.width / _resolution;
     
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    
-    [[UIColor greenColor] setStroke];
-    
-    [path moveToPoint:CGPointMake(0, CGRectGetMidY(rect))];
-    
-    for (int x = 0; x <= CGRectGetMaxX(rect); x+=step) {
-        float y = [self.perlin perlin1DValueForPoint:x];
-        [path addLineToPoint:CGPointMake(x, y * 100 + CGRectGetMidY(rect))];
+    if (!self.is2D) {
+
         
-    }
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        
+        [[UIColor greenColor] setStroke];
+        
+        [path moveToPoint:CGPointMake(0, CGRectGetMidY(rect))];
+        
+        for (int x = 0; x <= CGRectGetMaxX(rect); x+=step) {
+            float y = [self.perlin perlin1DValueForPoint:x];
+            [path addLineToPoint:CGPointMake(x, y * 100 + CGRectGetMidY(rect))];
+            
+        }
+        
+        [path stroke];
+    } else {
     
-    [path stroke];
+        
+        for (int x = 0; x <= CGRectGetMaxX(rect); x+=step) {
+            for (int y = 0; y <= CGRectGetMaxY(rect); y+=step) {
+                
+                float z = [self.perlin perlin2DValueForPoint:x :y];
+                
+                float value = (z + 1) * 0.5;
+                
+                UIColor *color = [UIColor colorWithWhite:value alpha:1];
+                [color setFill];
+                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(x, y, step, step)];
+
+                [path fill];
+                
+            }
+        }
+    }
 }
 
 

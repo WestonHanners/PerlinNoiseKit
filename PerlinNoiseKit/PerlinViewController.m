@@ -33,8 +33,8 @@
 @synthesize textSeed;
 
 - (IBAction)updates:(id)sender {
-    labelOctaves.text = [NSString stringWithFormat:@"%f", sliderOctaves.value];
-    perlin.octaves = sliderOctaves.value;
+    labelOctaves.text = [NSString stringWithFormat:@"%1Lf", roundl(sliderOctaves.value)];
+    perlin.octaves = roundl(sliderOctaves.value);
     labelFrequency.text = [NSString stringWithFormat:@"%f", sliderFrequency.value];
     perlin.frequency = sliderFrequency.value;
     labelPersistence.text = [NSString stringWithFormat:@"%f", sliderPersistence.value];
@@ -59,6 +59,8 @@
         perlin.interpolationMethod = kLinearInterpolation;
     }
     
+    [perlin setSmoothing:switchSmoothing.on];
+    
     // Set perlin properties.
     pview.resolution = sliderResolution.value;
     perlin.persistence = sliderPersistence.value;
@@ -71,18 +73,19 @@
     NSLog(@"\nPersistance: %f\nFrequency: %f\nScale:%f\nOctaves %d", perlin.persistence, perlin.frequency, perlin.scale, perlin.octaves);
     
     // Redraw.
+    [pview setPerlin:perlin];
     [pview setNeedsDisplay];
     
 }
 
 
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//    NSLog(@"%@", self.view);
-//    perlin = [[PerlinNoise alloc] initWithSeed:25];
-//    pview.perlin = perlin;
-//}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSLog(@"%@", self.view);
+    perlin = [[PerlinNoise alloc] initWithSeed:25];
+    pview.perlin = perlin;
+}
 
 - (void)viewDidUnload {
     [self setSliderOctaves:nil];
