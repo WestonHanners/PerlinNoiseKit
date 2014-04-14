@@ -84,7 +84,7 @@
         
     }
     
-    return value *  _scale;
+    return value / _octaves * _scale;;
 }
 
 #pragma mark - 2D Perlin Functions
