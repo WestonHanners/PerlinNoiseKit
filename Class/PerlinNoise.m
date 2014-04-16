@@ -150,7 +150,7 @@
 
         _functionSelector++;
     }
-    return value / _octaves;
+    return value / _octaves * scale;
 }
 
 @end
